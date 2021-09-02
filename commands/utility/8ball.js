@@ -19,6 +19,6 @@ module.exports = {
             .setFooter(`Requested by ${interaction.user.username}`)
             .setTimestamp();
 
-        await interaction.reply({embeds: [AnswerEmbed]});
+        await interaction.reply({ embeds: [AnswerEmbed] });
     },
 };
