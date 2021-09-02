@@ -1,0 +1,9 @@
+{
+    "devDependencies": {
+        "node": "^16.6.1",
+        "npm": "^7.21.1"
+    },
+    "dependencies": {
+        "discord.js": "^13.1.0"
+    }
+}
