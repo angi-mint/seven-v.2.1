@@ -1,4 +1,4 @@
-node/
-npm/
-npx/
+node
+npm
+npx
 server.js
