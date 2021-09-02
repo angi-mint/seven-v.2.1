@@ -10,14 +10,20 @@ const mySecret = process.env['token']
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 client.commands = new Collection();
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	// Set a new item in the Collection
-	// With the key as the command name and the value as the exported module
-	client.commands.set(command.data.name, command);
+const load = (dir = "./commands/") => {
+	fs.readdirSync(dir).forEach(dirs => {
+		const commandFiles = fs.readdirSync(`${dir}/${dirs}`).filter(files => files.endsWith(".js"));
+		for (const file of commandFiles) {
+			const command = require(`${file}`);
+			// Set a new item in the Collection
+			// With the key as the command name and the value as the exported module
+			client.commands.set(command.data.name, command);
+		}
+	});
 }
+load();
+
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
