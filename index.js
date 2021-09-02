@@ -15,7 +15,7 @@ const load = (dir = "./commands/") => {
 	fs.readdirSync(dir).forEach(dirs => {
 		const commandFiles = fs.readdirSync(`${dir}/${dirs}`).filter(files => files.endsWith(".js"));
 		for (const file of commandFiles) {
-			const command = require(`${file}`);
+			const command = require(`${dir}/${dirs}/${file}`);
 			// Set a new item in the Collection
 			// With the key as the command name and the value as the exported module
 			client.commands.set(command.data.name, command);
