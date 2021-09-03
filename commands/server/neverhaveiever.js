@@ -21,10 +21,9 @@ module.exports = {
                 .setDescription(`╭・୨୧・・・・・・・・:cupcake: ╮\n︰\n${RandEmoji} !⠀︰**${Question}**\n︰\n<:sevenyes:822064176750919681> I have\n<:sevencross:822064409689718874> I haven't\n: \n ╰ :cupcake:・・・・・・・・୨୧・╯`)
                 .setColor(interaction.member.displayHexColor)
                 .setTimestamp()
-                .setFooter(``)
                 .setAuthor(interaction.user.username, interaction.user.displayAvatarURL({ dynamic: true }));
 
-            const message = await interaction.reply({ embeds: [nhie], fetchReply: true })
+            const message = await interaction.reply({ content: '<@&735077282636496913>', embeds: [nhie], fetchReply: true })
             message.react('822064176750919681')
             message.react('822064409689718874')
         }
