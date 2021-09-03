@@ -28,8 +28,14 @@ load();
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
 	console.log('Ready!');
-      client.user.setActivity(`with angi`,            {type: "PLAYING"},
-      {status: "dnd"})
+	client.user.setPresence({
+		activities: [{
+			name: 'with angi',
+			type: 'PLAYING'
+		}],
+		status: 'dnd'
+	})
+
 });
 
 client.on('interactionCreate', async interaction => {
