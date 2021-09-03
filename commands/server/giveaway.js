@@ -1,5 +1,6 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
 const Discord = require('discord.js')
+const { SlashCommandBuilder } = require('@discordjs/builders');
+const { checkPerms } = require('../../import_folder/functions')
 
 
 module.exports = {
@@ -11,12 +12,8 @@ module.exports = {
 
 
     async execute(interaction) {
-
-        if (!interaction.member.roles.cache.has('688386729807577284')) {
-            await interaction.reply({ content: 'Only Giveaway Managers can use this command', ephemeral: true })
-        } if (interaction.channel.id !== '759704464423780422') {
-            await interaction.reply({ content: 'You can only use this command in <#759704464423780422>', ephemeral: true })
-        } else {
+        var check = await checkPerms(interaction, '688386729807577284', '759704464423780422')
+        if (check) {
             const host = interaction.options.getUser('donator') || interaction.user;
             const gwmsg = interaction.options.getString('message')
             var gwEmbed = new Discord.MessageEmbed()
