@@ -11,7 +11,7 @@ module.exports = {
         .addStringOption(option => option.setName('message').setDescription('input message to display in the embed').setRequired(false)),
 
     async execute(interaction) {
-        var check = await checkPerms(interaction, '688386729807577284', '759704464423780422')
+        var check = await checkPerms(interaction, '735069864636710923', '883461530203598858')
         if (check) {
             const host = interaction.options.getUser('donator') || interaction.user;
             const lmmsg = interaction.options.getString('message')
