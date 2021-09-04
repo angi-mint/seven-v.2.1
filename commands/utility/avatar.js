@@ -8,7 +8,7 @@ module.exports = {
         .setDescription('Get the avatar URL of the selected user, or your own avatar.')
         .addUserOption(option => option.setName('target').setDescription('The user\'s avatar to show')),
     async execute(interaction) {
-        var ccheck = await checkCC(interaction, none, none)
+        var ccheck = await checkCC(interaction, null, null)
         if (ccheck) {
             const user = interaction.options.getUser('target') || interaction.user;
 
