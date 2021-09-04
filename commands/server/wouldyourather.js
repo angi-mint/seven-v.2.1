@@ -24,7 +24,8 @@ module.exports = {
                 .setTimestamp()
                 .setAuthor(interaction.user.username, interaction.user.displayAvatarURL({ dynamic: true }));
 
-            const message = await interaction.reply({ content: '<@&735077282636496913>', embeds: [wyr], fetchReply: true })
+            await interaction.channel.send(`<@&735077282636496913>`)
+            const message = await interaction.reply({ embeds: [wyr], fetchReply: true })
             message.react('883456409075851304')
             message.react('883456408979386398')
         }
