@@ -16,8 +16,8 @@ const dir = './commands/'
 		}
 	});
 // Place your client and guild ids here
-const clientId = '817083580315992105';
-const guildId = '745889847041851424';
+const clientId = '737933523918389328';
+const guildId = '688102135363141652';
 
 
 const rest = new REST({ version: '9' }).setToken(mySecret);
