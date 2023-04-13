@@ -1,6 +1,7 @@
 # seven-v.2.1 
 ## a discord v.13.3.1 bot
-- created by 천사#0007 for the server [Magic Shop](https://discord.gg/6CwcEf5t7g)
+- I'm currently working on version 2.2, it will be using discordjs v14 instead
+- created by 천사#8747 for the server Your Eyes Tell
 - supports slash commands
 
 ## working commands
